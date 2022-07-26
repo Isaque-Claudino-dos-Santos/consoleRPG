@@ -43,6 +43,11 @@ class Entity {
     strick(who) {
         who.removeLifes(this.attack)
     }
+
+    dropCoins(who) {
+        who.coins += this.coins
+        this.coins = 0
+    }
 }
 
 export default Entity
