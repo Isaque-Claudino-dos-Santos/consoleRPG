@@ -11,7 +11,7 @@ class Entity {
         this.#lifes = lifes
         this.#attack = attack
         this.#defense = defense
-        this.#isDead = this.#checkIsDead()
+        this.#isDead = this.checkIsDead()
     }
 
     get name() { return this.#name }
@@ -27,15 +27,18 @@ class Entity {
     get isDead() { return this.#isDead }
     set isDead(value) { this.#isDead = value }
 
-    #checkIsDead() {
+    checkIsDead() {
         if (this.lifes >= this.minLifes) return false
         return true
     }
 
-    #removeLifes(amount) {
+    removeLifes(amount) {
         this.#lifes -= amount
     }
 
+    strick(who) {
+        who.removeLifes(this.attack)
+    }
 }
 
 export default Entity
