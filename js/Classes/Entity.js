@@ -5,6 +5,7 @@ class Entity {
     #attack = 0
     #defense = 0
     #isDead = true
+    #coins = 0
 
     constructor(name, lifes, attack, defense) {
         this.#name = name
@@ -26,6 +27,9 @@ class Entity {
 
     get isDead() { return this.#isDead }
     set isDead(value) { this.#isDead = value }
+
+    get coins() { return this.#coins }
+    set coins(value) { this.#coins = value }
 
     checkIsDead() {
         if (this.lifes >= this.minLifes) return false
