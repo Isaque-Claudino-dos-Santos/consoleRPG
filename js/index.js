@@ -5,10 +5,11 @@ import Game from "./Classes/Game.js";
 
 let player = new Player('isaque', 10, 2, 0)
 let slime = new Enimy('slime', 5, 1, 0)
+slime.coins = 10
 
-player.strick(slime)
+slime.dropCoins(player)
 
 let game = new Game(player)
 
-console.table(player)
-console.table(slime)
+console.log(player)
+console.log(slime)
