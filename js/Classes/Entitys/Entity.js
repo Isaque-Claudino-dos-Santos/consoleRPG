@@ -1,12 +1,15 @@
-class Entity {
+import Inventory from "../Inventory.js"
+
+class Entity extends Inventory {
     #name = ''
     #lifes = 0
     #minLifes = 1
     #attack = 0
     #defense = 0
     #isDead = true
-    
+
     constructor(name, lifes, attack, defense) {
+        super()
         this.#name = name
         this.#lifes = lifes
         this.#attack = attack
@@ -26,9 +29,6 @@ class Entity {
 
     get isDead() { return this.#isDead }
     set isDead(value) { this.#isDead = value }
-
-    get coins() { return this.#coins }
-    set coins(value) { this.#coins = value }
 
     checkIsDead() {
         if (this.lifes >= this.minLifes) return false
