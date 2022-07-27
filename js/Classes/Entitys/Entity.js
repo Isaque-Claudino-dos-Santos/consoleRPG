@@ -5,8 +5,7 @@ class Entity {
     #attack = 0
     #defense = 0
     #isDead = true
-    #coins = 0
-
+    
     constructor(name, lifes, attack, defense) {
         this.#name = name
         this.#lifes = lifes
@@ -42,11 +41,6 @@ class Entity {
 
     strick(who) {
         who.removeLifes(this.attack)
-    }
-
-    dropCoins(who) {
-        who.coins += this.coins
-        this.coins = 0
     }
 }
 
