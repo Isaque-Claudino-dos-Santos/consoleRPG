@@ -2,7 +2,7 @@ class Item {
     #name = ''
     #description = ''
     #price = 0
-    #amount = 0
+    #amount = 1
 
     constructor(name, description, price) {
         this.#name = name
