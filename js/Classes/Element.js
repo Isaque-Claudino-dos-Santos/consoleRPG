@@ -23,6 +23,24 @@ class Element {
         element.textContent = textContent
         return element
     }
+
+    h1(textContent, className) {
+        let element = document.createElement('h1')
+        element.className = className
+        element.textContent = textContent
+        return element
+    }
+
+    button(textContent, className, context, method, param) {
+        let element = document.createElement('button')
+        element.className = className
+        element.textContent = textContent
+        element.onclick = () => {
+            context[method](param)
+        }
+        return element
+    }
+
 }
 
 export default Element
