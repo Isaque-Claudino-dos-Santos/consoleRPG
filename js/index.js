@@ -1,10 +1,11 @@
 "use strict";
 
-import store from "./store.js";
+import { players, enimys, items, storeFind } from "./store.js";
 
 
+let p = players[0]
+
+p.getItem(storeFind('coins', items))
 
 
-console.log(store)
-
-
+console.log(p.element('body'))
