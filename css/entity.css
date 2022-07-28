@@ -1,0 +1,40 @@
+body {
+    height: 100%;
+}
+
+.entity {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 5px;
+
+    /* TEMP */
+    background: black;
+    color: white;
+    margin: 20px;
+}
+
+.entity h1 {
+    text-align: center;
+}
+
+.entity p {
+    margin: 1%;
+}
+
+.entity .inventory {
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.entity .inventory .content_item {
+    padding: 3px;
+    margin: 5px;
+    border-radius: 10%;
+    background-color: blue;
+}
+
+.entity .inventory h1 {
+    font-size: 1.2em;
+}
