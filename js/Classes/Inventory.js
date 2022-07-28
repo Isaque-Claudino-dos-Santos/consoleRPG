@@ -1,3 +1,4 @@
+import Element from './Element.js'
 import Item from './Items/Item.js'
 
 class Inventory {
@@ -38,6 +39,29 @@ class Inventory {
 
         if (item.amount < item.minAmount)
             this.#deleteItem(item)
+    }
+
+    inventoryElement(elementNode = '') {
+        const tag = new Element()
+
+        let arrayItemsElement = []
+
+        for (const key in this.inventory) {
+            let item = this.inventory[key]
+
+            let name = tag.p(`${item.name}`, `item name`)
+            let amount = tag.p(`Amount: ${item.amount}`, `item amount`)
+            let price = tag.p(`Price: ${item.price}`, `item price`)
+            let containerItem = tag.div(`inventory item ${item.name}`, [name, amount, price])
+
+            arrayItemsElement.push(containerItem)
+        }
+
+        let container = tag.div(`${this.type} ${this.name} inventory`, arrayItemsElement)
+
+        if (elementNode !== '')
+            elementNode.appendChild(container)
+        return container
     }
 }
 
