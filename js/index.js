@@ -3,9 +3,13 @@
 import { players, enimys, items, storeFind } from "./store.js";
 
 
-let p = players[0]
+let p = storeFind('isaque', players)
 
 p.getItem(storeFind('coins', items))
+p.getItem(storeFind('smal sword', items))
 
 
-console.log(p.element('body'))
+
+p.element('body')
+
+
