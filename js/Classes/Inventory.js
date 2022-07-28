@@ -32,6 +32,10 @@ class Inventory {
         this.#stakeItem(item, amount - 1)
     }
 
+    useItem(item) {
+        item.amount = 'isaque'
+    }
+
     dropItem(item, amount = 1) {
         if (!this.#existInTheInventory(item.name)) return
 
@@ -48,11 +52,22 @@ class Inventory {
 
         for (const key in this.inventory) {
             let item = this.inventory[key]
+            let elements = []
 
-            let name = tag.p(`${item.name}`, `item name`)
-            let amount = tag.p(`Amount: ${item.amount}`, `item amount`)
-            let price = tag.p(`Price: ${item.price}`, `item price`)
-            let containerItem = tag.div(`inventory item ${item.name}`, [name, amount, price])
+            elements.push(
+                tag.h1(`${item.name}`, `item name`),
+                tag.p(`Amount: ${item.amount}`, `item amount`),
+                tag.p(`Price: ${item.price}`, `item price`)
+            )
+
+            if (item.force !== undefined) {
+                elements.push(tag.p(`Force: ${item.force}`, `item force`))
+            }
+
+            elements.push(tag.button('Use', 'item button use', this, 'useItem', item))
+            elements.push(tag.button('Drop', 'item button drop', this, 'dropItem', item))
+
+            let containerItem = tag.div(`content_item ${item.name}`, elements)
 
             arrayItemsElement.push(containerItem)
         }
