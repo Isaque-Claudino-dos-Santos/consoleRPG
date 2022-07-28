@@ -12,15 +12,32 @@ class Inventory {
         return true
     }
 
-    getItem(item) {
+    #stakeItem(item, amount) {
+        this.inventory[item.name].incrementAmount(amount)
+    }
+
+    #saveItem(item) {
+        this.inventory[item.name] = item
+    }
+
+    #deleteItem(item) {
+        delete this.inventory[item.name]
+    }
+
+    getItem(item, amount = 1) {
         if (!(item instanceof Item)) return
 
-        if (this.#existInTheInventory(item.name)) {
-            this.inventory[item.name].incrementAmount(1)
-            return
-        }
+        this.#saveItem(item)
+        this.#stakeItem(item, amount - 1)
+    }
 
-        this.inventory[item.name] = item
+    dropItem(item, amount = 1) {
+        if (!this.#existInTheInventory(item.name)) return
+
+        item.decrementAmount(amount)
+
+        if (item.amount < item.minAmount)
+            this.#deleteItem(item)
     }
 }
 
