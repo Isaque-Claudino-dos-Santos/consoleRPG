@@ -42,12 +42,12 @@ class Entity extends Inventory {
     element(whoAppend = '') {
         const tag = new Element()
 
-        let name = tag.p(`${this.name}`, `${this.type} name`)
+        let name = tag.h1(`${this.name}`, `${this.type} name`)
         let lifes = tag.p(`Life: ${this.lifes}`, `${this.type} lifes`)
         let attack = tag.p(`Attack: ${this.attack}`, `${this.type} attack`)
         let defense = tag.p(`Defense: ${this.defense}`, `${this.type} defense`)
 
-        let container = tag.div(`${this.type} ${this.name}`, [name, lifes, attack, defense])
+        let container = tag.div(`entity ${this.type} ${this.name}`, [name, lifes, attack, defense])
 
         this.inventoryElement(container)
 
