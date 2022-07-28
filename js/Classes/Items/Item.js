@@ -2,6 +2,7 @@ class Item {
     #name = ''
     #description = ''
     #price = 0
+    #minAmount = 1
     #amount = 1
 
     constructor(name, description, price) {
@@ -20,6 +21,10 @@ class Item {
 
     get price() {
         return this.#price
+    }
+
+    get minAmount() {
+        return this.#minAmount
     }
 
     get amount() {
