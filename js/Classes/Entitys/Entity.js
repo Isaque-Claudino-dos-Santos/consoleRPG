@@ -1,3 +1,4 @@
+import Element from "../Element.js"
 import Inventory from "../Inventory.js"
 
 class Entity extends Inventory {
@@ -7,6 +8,7 @@ class Entity extends Inventory {
     #attack = 0
     #defense = 0
     #isDead = true
+    #type = ''
 
     constructor(name, lifes, attack, defense) {
         super()
@@ -29,6 +31,32 @@ class Entity extends Inventory {
 
     get isDead() { return this.#isDead }
     set isDead(value) { this.#isDead = value }
+
+    get type() {
+        return this.#type
+    }
+    set type(value) {
+        this.#type = value
+    }
+
+    element(whoAppend = '') {
+        const tag = new Element()
+
+        let name = tag.p(`${this.name}`, `${this.type} name`)
+        let lifes = tag.p(`Life: ${this.lifes}`, `${this.type} lifes`)
+        let attack = tag.p(`Attack: ${this.attack}`, `${this.type} attack`)
+        let defense = tag.p(`Defense: ${this.defense}`, `${this.type} defense`)
+
+        let container = tag.div(`${this.type} ${this.name}`, [name, lifes, attack, defense])
+
+        this.inventoryElement(container)
+
+        if (whoAppend === '')
+            return container
+
+        let append = tag.get(whoAppend)
+        append.appendChild(container)
+    }
 
     checkIsDead() {
         if (this.lifes >= this.minLifes) return false
