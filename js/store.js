@@ -17,5 +17,10 @@ const enimys = []
 
 enimys.push(new Enimy('slime', 5, 2, 0))
 
+function storeFind(name, array) {
+    let obj = array.filter(value => { return value.name === name })[0]
+    return obj
+}
 
-export default { players, items, enimys }
+
+export { players, items, enimys, storeFind }
