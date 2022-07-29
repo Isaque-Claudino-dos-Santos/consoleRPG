@@ -1,0 +1,11 @@
+:root {
+    --font-type: 'Courier New', Courier, monospace;
+    --font-color: white;
+    --font-size: 15px;
+
+    --border-color: green;
+    --border-size: 2px;
+    --border-type: solid;
+
+    --margin: 1%;
+}
