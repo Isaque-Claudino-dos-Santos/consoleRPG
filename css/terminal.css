@@ -1,13 +1,9 @@
-.terminal {
-    width: 100%;
-
-    border: 1px solid #00af00;
-
-    margin: 10px;
+main {
+    width: 90%;
 }
 
-.terminal.selected {
-    border: 2px solid #00af00;
+.terminal {
+    border: var(--border-size) var(--border-type) var(--border-color);
 }
 
 .terminal .line .request {
@@ -15,24 +11,26 @@
 }
 
 .terminal .line .request input,
-.terminal .line .request span {
-    margin: 1%;
+.terminal .line .request span,
+.terminal .line .response {
+    font-family: var(--font-type);
+    font-size: var(--font-size);
+    color: var(--font-color);
+
+    margin: var(--margin);
+
+    white-space: nowrap;
+}
+
+.terminal .line .response {
+    display: inline-block;
+    margin: 0;
 }
 
 .terminal .line input {
     width: 100%;
 }
 
-.terminal .line .response {
-    margin: 0 0 1% 1%;
-}
-
 .error {
     color: red;
-}
-
-
-.help_table tr {
-    margin: 1%;
-    border: 2px solid white;
 }
