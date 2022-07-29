@@ -1,0 +1,38 @@
+.terminal {
+    width: 100%;
+
+    border: 1px solid #00af00;
+
+    margin: 10px;
+}
+
+.terminal.selected {
+    border: 2px solid #00af00;
+}
+
+.terminal .line .request {
+    display: flex;
+}
+
+.terminal .line .request input,
+.terminal .line .request span {
+    margin: 1%;
+}
+
+.terminal .line input {
+    width: 100%;
+}
+
+.terminal .line .response {
+    margin: 0 0 1% 1%;
+}
+
+.error {
+    color: red;
+}
+
+
+.help_table tr {
+    margin: 1%;
+    border: 2px solid white;
+}
