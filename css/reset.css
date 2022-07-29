@@ -1,14 +1,22 @@
 * {
+    box-sizing: border-box;
     padding: 0;
     margin: 0;
     border: none;
-    text-decoration: none;
-    box-sizing: border-box;
     outline: none;
+    list-style: none;
     font-family: 'Courier New', Courier, monospace;
+    text-decoration: none;
+
+    background-color: black;
+    color: white;
+    border-color: white;
 }
 
 body {
-    width: 100vw;
-    height: 100vh;
+    width: 95vw;
+}
+
+hr {
+    border: 1px solid white;
 }
