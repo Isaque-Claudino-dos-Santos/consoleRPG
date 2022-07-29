@@ -5,7 +5,7 @@
     border: none;
     outline: none;
     list-style: none;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
 
     background-color: black;
@@ -14,7 +14,7 @@
 }
 
 body {
-    width: 95vw;
+    width: 100vw;
 }
 
 hr {
