@@ -1,4 +1,3 @@
-import Element from "../Element.js"
 import Inventory from "../Inventory.js"
 
 class Entity extends Inventory {
@@ -37,25 +36,6 @@ class Entity extends Inventory {
     }
     set type(value) {
         this.#type = value
-    }
-
-    element(whoAppend = '') {
-        const tag = new Element()
-
-        let name = tag.h1(`${this.name}`, `${this.type} name`)
-        let lifes = tag.p(`Life: ${this.lifes}`, `${this.type} lifes`)
-        let attack = tag.p(`Attack: ${this.attack}`, `${this.type} attack`)
-        let defense = tag.p(`Defense: ${this.defense}`, `${this.type} defense`)
-
-        let container = tag.div(`entity ${this.type} ${this.name}`, [name, lifes, attack, defense])
-
-        this.inventoryElement(container)
-
-        if (whoAppend === '')
-            return container
-
-        let append = tag.get(whoAppend)
-        append.appendChild(container)
     }
 
     checkIsDead() {
