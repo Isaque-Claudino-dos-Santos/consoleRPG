@@ -1,4 +1,5 @@
 import Comand from './Comand.js'
+import Battle from '../Game/Blattle.js'
 
 let comand = new Comand()
 
@@ -37,32 +38,31 @@ comand.create('prompt', (params) => {
 
 //comands to the Game
 
-comand.create('game', (params) => {
-    let obj = params[0]
-    let method = params[1]
-    let param = params[2]
+const createComandsToBattle = () => {
+    let battle = {}
 
-    let game = {}
-
-    let call = {
-        'state': {
-            'start': () => {
-                return 'start game OK'
-            }
-        },
-        'select': {
-            'player': (namePlayer) => {
-                return namePlayer
-            }
-        }
+    let start = (params) => {
+        let playerName = params[0]
+        let opponentName = params[1]
+        battle = new Battle(playerName, opponentName)
     }
 
-    if (obj in call && method !== undefined)
-        return call[obj][method](param)
+    let execute = (params) => {
+        battle.execute(params)
+        console.log(battle)
+    }
 
-    return ''
-}, 'game terminal em desenvolvimento ...')
 
+    comand.create('battle.start', start)
+    comand.create('battle.execute', execute)
+}
+
+
+comand.create('game', (params) => {
+    createComandsToBattle()
+
+    return comand.helpAll()
+}, 'game terminal em desenvolvimento ... execute (game) para liberar comandos')
 
 
 
