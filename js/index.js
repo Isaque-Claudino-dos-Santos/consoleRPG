@@ -1,11 +1,7 @@
 "use strict";
 
-
 import comand from './Classes/Comand/create.js';
-import Game from './Classes/Game.js';
 import Terminal from './Classes/Terminal/Terminal.js'
-
-let game = new Game()
 
 let terminal = new Terminal()
 
