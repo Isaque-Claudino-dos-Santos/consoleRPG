@@ -30,5 +30,10 @@ function storeFind(name, array) {
     return obj
 }
 
+function storeNames(array) {
+    return array.map(value => {
+        return value.name
+    })
+}
 
-export { players, items, enimys, storeFind }
+export { players, items, enimys, storeFind, storeNames }
