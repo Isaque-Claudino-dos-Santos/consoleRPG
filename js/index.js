@@ -1,6 +1,6 @@
 "use strict";
 
-import comand from './Classes/Comand/create.js';
+import comand from './Classes/Terminal/Comand/create.js';
 import Terminal from './Classes/Terminal/Terminal.js'
 
 let terminal = new Terminal()
