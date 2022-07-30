@@ -27,7 +27,7 @@ comand.create('calc', (params) => {
     }
     if (operador in calcs)
         return calcs[operador](v1, v2)
-    return 'type call not exitent'
+    return 'type calc not exitent'
 }, 'make calc [number,operator,number]')
 
 comand.create('prompt', (params) => {
