@@ -2,9 +2,10 @@ class Canvas {
     canvas = document.createElement('canvas')
     context = this.canvas.getContext('2d')
 
-    constructor() {
-        this.canvas.style = "border: 1px solid"
-        return this.canvas
+    constructor(canvasW, canvasH) {
+        this.canvas.width = canvasW
+        this.canvas.height = canvasH
+        this.canvas.style = "border: 1px solid;"
     }
 
     fillRect(x, y, w, h, c) {
