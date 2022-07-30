@@ -1,5 +1,5 @@
 import Comand from './Comand.js'
-import Battle from '../Game/Blattle.js'
+import Battle from '../../Game/Blattle.js'
 
 let comand = new Comand()
 
