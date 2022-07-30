@@ -1,15 +1,11 @@
 "use strict";
 
-import comand from './Classes/Terminal/comand.js';
+
+import comand from './Classes/Comand/create.js';
+import Game from './Classes/Game.js';
 import Terminal from './Classes/Terminal/Terminal.js'
-import { players, enimys, items, storeFind } from "./store.js";
 
-
-let p = storeFind('isaque', players)
-
-p.getItem(storeFind('coins', items))
-p.getItem(storeFind('smal sword', items))
-
+let game = new Game()
 
 let terminal = new Terminal()
 
