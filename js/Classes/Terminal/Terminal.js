@@ -137,7 +137,11 @@ class Terminal {
 
 
     setResponse(valor) {
-        document.querySelector('.terminal .line_' + this.line + ' .response').innerHTML = valor
+        if (typeof valor === 'object') {
+            document.querySelector('.terminal .line_' + this.line + ' .response').appendChild(valor)
+        } else {
+            document.querySelector('.terminal .line_' + this.line + ' .response').innerHTML = valor
+        }
     }
 
     //substituir 
