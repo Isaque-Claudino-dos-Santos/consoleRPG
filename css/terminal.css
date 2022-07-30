@@ -1,5 +1,5 @@
 main {
-    width: 90%;
+    width: 100%;
 }
 
 .terminal {
@@ -18,18 +18,16 @@ main {
     color: var(--font-color);
 
     margin: var(--margin);
-
-    white-space: nowrap;
-}
-
-.terminal .line .response {
-    display: inline-block;
-    margin: 0 0 0 1%;
 }
 
 .terminal .line input {
     width: 100%;
 }
+
+.terminal .line .response {
+    margin: 0 0 0 1%;
+}
+
 
 .error {
     color: red;
