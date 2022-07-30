@@ -1,17 +1,21 @@
 class Comand {
-    static listComands = {}
+    #listComands = {}
 
     constructor() { }
 
+    get listComands() {
+        return this.#listComands
+    }
+
     create(name, method, help) {
         help = `<span style="color: purple">${name}</span> ${help} <hr><br>`
-        Comand.listComands[name] = { method, help }
+        this.listComands[name] = { method, help }
     }
 
     helpAll() {
         let text = ''
-        for (const key in Comand.listComands) {
-            let comand = Comand.listComands[key]
+        for (const key in this.listComands) {
+            let comand = this.listComands[key]
             let help = comand.help
             text += help
         }
@@ -21,14 +25,14 @@ class Comand {
     call(comand, params) {
         if (comand === 'help') {
             if (params[0] !== undefined) {
-                return Comand.listComands[params[0]]['help']
+                return this.listComands[params[0]]['help']
             } else {
                 return this.helpAll()
             }
         }
 
-        if (comand in Comand.listComands)
-            return Comand.listComands[comand]['method'](params)
+        if (comand in this.listComands)
+            return this.listComands[comand]['method'](params, this)
 
         return 'Comand ' + comand + ' not exist'
     }
