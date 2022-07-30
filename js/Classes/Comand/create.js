@@ -9,7 +9,7 @@ comand.create('echo', (params) => {
 comand.create('alert', (params) => {
     alert(params.join(' '))
     return ''
-}, 'exec aler [mensage] box in the browser')
+}, 'exec alert [mensage] box in the browser')
 
 comand.create('calc', (params) => {
     let v1 = parseFloat(params[0])
