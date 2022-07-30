@@ -34,5 +34,8 @@ comand.create('prompt', (params) => {
     return prompt(params[0])
 }, 'exec prompt [label] box with input in the browser')
 
+comand.create('game',() => {
+    
+})
 
 export default comand
