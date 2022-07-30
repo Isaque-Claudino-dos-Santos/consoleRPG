@@ -7,6 +7,16 @@ class Canvas {
         return this.canvas
     }
 
+    fillRect(x, y, w, h, c) {
+        this.context.fillStyle = c
+        this.context.fillRect(x, y, w, h)
+    }
+
+    strokeRect(x, y, w, h, c) {
+        this.context.strokeStyle = c
+        this.context.strokeRect(x, y, w, h)
+    }
+
 
 }
 
