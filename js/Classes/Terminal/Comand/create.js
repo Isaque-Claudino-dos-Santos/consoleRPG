@@ -1,5 +1,4 @@
 import Comand from './Comand.js'
-import Battle from '../../Game/Blattle.js'
 
 let comand = new Comand()
 
@@ -34,37 +33,6 @@ comand.create('calc', (params) => {
 comand.create('prompt', (params) => {
     return prompt(params[0])
 }, 'exec prompt [label] box with input in the browser')
-
-
-//comands to the Game
-
-const createComandsToBattle = () => {
-    let battle = {}
-
-    let start = (params) => {
-        let playerName = params[0]
-        let opponentName = params[1]
-        battle = new Battle(playerName, opponentName)
-    }
-
-    let execute = (params) => {
-        battle.execute(params)
-        console.log(battle)
-    }
-
-
-    comand.create('battle.start', start)
-    comand.create('battle.execute', execute)
-}
-
-
-comand.create('game', (params) => {
-    createComandsToBattle()
-
-    return comand.helpAll()
-}, 'game terminal em desenvolvimento ... execute (game) para liberar comandos')
-
-
 
 
 export default comand
