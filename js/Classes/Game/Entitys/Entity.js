@@ -1,4 +1,4 @@
-import Inventory from "../Inventory.js"
+import Inventory from "../../Inventory.js"
 
 class Entity extends Inventory {
     #name = ''
