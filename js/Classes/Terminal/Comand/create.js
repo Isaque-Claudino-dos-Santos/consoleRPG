@@ -35,8 +35,23 @@ comand.create('prompt', (params) => {
     return prompt(params[0])
 }, 'exec prompt [label] box with input in the browser')
 
-comand.create('game', () => {
-    return new Canvas()
-})
+comand.create('pint', () => {
+    let canvas = new Canvas(600, 300)
+
+    canvas.canvas.addEventListener('mousemove', (ev) => {
+        let x = ev.offsetX
+        let y = ev.offsetY
+
+        canvas.context.beginPath()
+        canvas.context.fillStyle = 'red'
+        canvas.context.arc(x, y, 5, 0, Math.PI * 2)
+        canvas.context.fill()
+    })
+    return canvas.canvas
+},'view canavas to draw')
+
+
+
+
 
 export default comand
