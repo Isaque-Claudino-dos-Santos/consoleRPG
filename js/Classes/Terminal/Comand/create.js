@@ -1,4 +1,5 @@
 import Comand from './Comand.js'
+import Canvas from '../../../Games/Canvas.js'
 
 let comand = new Comand()
 
@@ -34,8 +35,8 @@ comand.create('prompt', (params) => {
     return prompt(params[0])
 }, 'exec prompt [label] box with input in the browser')
 
-comand.create('game',() => {
-    
+comand.create('game', () => {
+    return new Canvas()
 })
 
 export default comand
