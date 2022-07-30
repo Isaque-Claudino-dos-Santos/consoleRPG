@@ -28,7 +28,9 @@ comand.create('calc', (params) => {
     return 'type call not exitent'
 }, 'make calc [number,operator,number]')
 
-
+comand.create('prompt', (params) => {
+    return prompt(params[0])
+}, 'exec prompt [label] box with input in the browser dbjawdawhbdwapdbwadibwdiwhbdwbdwadbwa ')
 
 
 
